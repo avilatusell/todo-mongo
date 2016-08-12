@@ -1,0 +1,18 @@
+link(href='/styles.css', rel='stylesheet')
+
+h1= title
+
+ul.menu
+	li
+		a(href="/tasks") todo tasks
+	li
+		a(href="/tasks/completed") completed tasks
+
+form(action="/task", method="POST")
+	label name task
+	input(type="text", name="name")
+	input(type="submit", value="add task")
+
+ul
+	each task, i in tasks
+		li #{task._id} - #{task.name}
